@@ -1,0 +1,737 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fondu{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.Navbar-content {
+  position: fixed; /* Rend la barre de navigation fixe */
+  top: 0; /* Aligne la barre de navigation en haut de la page */
+  width: 100%; /* Occupe toute la largeur de la fenêtre */
+  z-index: 1000; /* Assure que la barre de navigation est placée au-dessus du reste du contenu */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #000417;
+  color: #00aae7;
+  transition: opacity 0.5s ease; /* Animation de transition de l'opacité */
+}
+
+  .Navbar-NP a {
+    margin: 0;
+    margin-left: 20px;
+    transition: color 0.5s ease; 
+     /* Curseur par défaut */
+    animation: slideInFromLeft 1s ease-in-out;
+    text-decoration: none; /* Supprime la décoration du lien */
+    color: #00aae7; /* Couleur du texte */
+    font-size: 35px;
+    font-weight: 650;
+  }
+
+  .Navbar-links {
+  display: flex;
+  align-items: center;
+  margin-right: 120px; /* Réduisez la marge pour éviter que les liens ne soient trop espacés */
+  font-weight: 600;
+  gap: 70px; /* Ajoute un espacement entre les éléments enfants */
+  }
+  
+  .Navbar-links a {
+    color: #006a95; /* Couleur des liens */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    font-size: large;
+    animation: slideInFromRight 1s ease-out;
+    position: relative;
+  }
+  
+  .Navbar-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px; /* Ajustez cette valeur selon l'épaisseur souhaitée du soulignement */
+    left: 0;
+    width: 0%;
+    height: 4px; /* Ajustez cette valeur selon l'épaisseur souhaitée du soulignement */
+    background-color: #006a95; /* Couleur du soulignement */
+    border-radius: 7px; /* Pour rendre le soulignement plus rond */
+    transition: width 0.3s ease; /* Transition de la largeur pour l'animation */
+  }
+  
+  .Navbar-links a:hover::after {
+    width: 100%; /* Fait dérouler le soulignement de gauche à droite */
+  }
+  
+
+  
+  .Navbar-content.translucent{
+    opacity: 0.8; /* Opacité de la barre de navigation */
+  }
+  .CV-style {
+    background-color: #006a95; /* Couleur de fond */
+    border: 2px solid #00a8eb; /* Bordure */
+    border-radius: 5px; /* Bord arrondi */
+    padding: 7px 20px; /* Espacement interne */
+    color: white; /* Couleur du texte */
+    font-size: large; /* Taille de la police */
+    cursor: pointer; /* Curseur au survol */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Animation de transition */
+    font-weight: bold;
+    animation: slideInFromRight 1s ease-out;
+  }
+  
+  .CV-style:hover {
+    background-color: #005580; /* Changement de couleur de fond au survol */
+    border-color: #005580; /* Changement de couleur de bordure au survol */
+  }
+
+  .accueil-title {
+    font-size: 80px; /* Taille de police plus grande */
+    animation: slideInFromLeft 2s ease-out; /* Utilisation de l'animation */
+    margin-bottom: -10px;
+  }
+  
+  .Accueil-container {
+    background-image: url('assets/image-galaxy-background.jpg'); /* Chemin vers votre image de fond */
+    background-size: cover; /* Redimensionne l'image pour couvrir tout le conteneur */
+    background-position: center; /* Centre l'image de fond */
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    height: 100vh; /* Utilisation de la hauteur de la fenêtre pour centrer verticalement */
+    font-style: oblique;
+    font-weight: bolder;
+    color: #ccc4df;
+  }
+  
+  .Accueil-content {
+    text-align: center; /* Centrage horizontal du contenu */
+  }
+
+  .Accueil-description {
+    font-size: 20px; /* Taille de police plus grande */
+    animation: fondu 2s ease-in; /* Utilisation de l'animation */
+
+  }
+/* Barre de défilement pour les navigateurs basés sur WebKit */
+::-webkit-scrollbar {
+  width: 7px; /* Largeur de la barre de défilement */
+}
+
+/* Bouton de défilement de la barre de défilement */
+::-webkit-scrollbar-thumb {
+  background-color: #00aae7; /* Couleur de fond du bouton de défilement */
+  border-radius: 3px; /* Bord arrondi */
+}
+
+/* Défilement de la barre de défilement au survol */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0084b4; /* Couleur de fond au survol */
+}
+
+/* Arrière-plan de la barre de défilement */
+::-webkit-scrollbar-track {
+  background-color: #000417; /* Couleur de fond de la barre de défilement */
+}
+
+.footer {
+  background-color: #000417;
+  color: #006a95;
+  padding: 20px;
+  text-align: center; /* Centrage du texte */
+  margin-top: auto;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal */
+  gap: 30px; /* Espacement entre les éléments enfants */
+}
+
+.footer-content p {
+  margin: 10px 0; /* Espacement autour du texte */
+}
+
+.social-icons {
+  display: flex;
+  gap: 25px; /* Espacement entre les icônes */
+}
+
+.social-icons a {
+  color: #00aae7;
+  text-decoration: none;
+  font-size: 32px; /* Taille des icônes */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: lightgray;
+}
+
+.Contact-container {
+  display: flex;
+  justify-content: center;
+  background-image: url('assets/galaxy-contact-background.jpg'); /* Chemin vers votre image de fond */
+  background-size: cover; /* Redimensionne l'image pour couvrir tout le conteneur */
+  background-position: center; /* Centre l'image de fond */
+  height: 91vh; /* Utilisation de la hauteur de la fenêtre pour centrer verticalement */
+  
+}
+.Contact-content {
+  padding: 20px;
+  
+  max-width: 1000px; /* Ajustez la largeur maximale selon vos préférences */
+  margin-top: 100px;
+  margin-bottom: 30px;
+  
+}
+
+.Contact-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ccc4df;
+}
+
+.Contact-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical; /* Permet de redimensionner la zone de texte verticalement */
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #0056b3;
+}
+
+.alert {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* partie a propos page accueil*/
+.APropos-container {
+  background-color: #3d3c4e; /* Utilisation du même fond que la section d'accueil */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajustez la hauteur si nécessaire */
+  color: #ccc4df; /* Couleur de texte contrastante */
+  text-align: center; /* Centrage horizontal */
+}
+
+.About-me {
+  padding: 0 20px; /* Ajoutez un peu de marge horizontale */
+  
+}
+
+.about-me-title {
+  font-size: 70px; /* Taille de police ajustée */
+  margin-bottom: 20px; /* Espacement inférieur */
+  
+}
+
+.about-me-description {
+  font-size: 20px; /* Taille de police ajustée */
+  max-width: 1000px; /* Limitez la largeur pour un meilleur contrôle de la lisibilité */
+  margin: 0 auto; /* Centrage horizontal */
+ 
+}
+
+/* CSS pour l'image à droite et forme ronde */
+.APropos-container {
+  display: flex;
+   /* Espacement entre les éléments enfants */
+  align-items: center;
+  
+}
+
+.About-me {
+  width: 50%; /* Ajustez la largeur du texte selon vos besoins */
+  padding-right: 20px;/* Ajustez la largeur selon vos besoins */
+}
+
+.separator-background {
+  background-color: #3d3c4e;
+  padding-top: 82px; /* Espace en haut */
+  padding-bottom: 80px;
+  
+}
+.separator{
+  margin-right: 400px; /* Espacement à droite */
+  margin-left: 400px; /* Espacement à gauche */
+
+}
+.timeline-section{
+
+  background-color: #3d3c4e;
+  padding-top: 10px; /* Espace en haut */
+  padding-bottom: 120px;
+
+}
+
+.timeline-section h1 {
+  color: #ccc4df;
+  text-align: center;
+  margin-bottom: 100px;
+  font-size: 70px;
+}
+
+.fleche-timeline {
+  color: #ccc4df;
+  font-size: 100px;
+  text-align: center;
+  margin-bottom: -50px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 20px auto;
+  
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #ccc4df;
+  transform: translateX(-50%);
+  border-radius: 40px;
+  height: 1300px;
+  margin-top: -50px;
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  
+}
+
+.timeline-item-content {
+  position: relative;
+  background: #dbd6f7;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  background: #3d3c4e;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.timeline-item h3 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.timeline-item p {
+  margin-bottom: 0;
+}
+
+.competences-section {
+  text-align: center;
+  background-color: #3d3c4e;
+  padding: 50px 0; /* Add some padding for better spacing */
+}
+
+.competences-section h1 {
+  color: #ccc4df;
+  margin-top: 0;
+  font-size: 70px; /* Reduce the font size for better proportion */
+  margin-bottom: 90px;
+}
+
+.competences-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr); /* Arrange competences with minimum width of 200px */
+  gap: 20px; /* Add some gap between competence items */
+  justify-content: center;
+  max-width: 1200px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container */
+}
+
+.competence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff; /* Set text color to white */
+   /* Adjust the font size */
+  background-color: #938ce1;
+  border-radius: 1000px;
+  margin : 20px;
+  padding-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  border-color: #333;
+  
+  
+}
+
+.htmlcss-icon {
+  /* Add the path to the icon */
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-image: url('assets/html.png');
+  background-size:cover;
+  width: 70px; /* Adjust the size of the icon */
+  height: 70px; /* Adjust the size of the icon */
+}
+.JS-icon {
+  /* Add the path to the icon */
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-image: url('assets/JS.png');
+  background-size: cover;
+  width: 70px; /* Adjust the size of the icon */
+  height: 70px; /* Adjust the size of the icon */
+}
+.symfony-icon {
+  /* Add the path to the icon */
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-image: url('assets/symfony_icon.png');
+  background-size: cover;
+  width: 70px; /* Adjust the size of the icon */
+  height: 70px; /* Adjust the size of the icon */
+}
+
+.php-icon {
+  /* Add the path to the icon */
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-image: url('assets/php.png');
+  background-size: cover;
+  width: 140px; /* Adjust the size of the icon */
+  height: 70px; /* Adjust the size of the icon */
+}
+
+.python-icon {
+  /* Add the path to the icon */
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-image: url('assets/Python.png');
+  background-size: cover;
+  width: 70px; /* Adjust the size of the icon */
+  height: 70px; /* Adjust the size of the icon */
+}
+.Java-icon {
+  /* Add the path to the icon */
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-image: url('assets/java.png');
+  background-size: cover;
+  width: 70px; /* Adjust the size of the icon */
+  height: 70px; /* Adjust the size of the icon */
+}
+
+.React-icon {
+  /* Add the path to the icon */
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-image: url('assets/react.png');
+  background-size: cover;
+  width: 70px; /* Adjust the size of the icon */
+  height: 70px; /* Adjust the size of the icon */
+}
+
+.SQL-icon {
+  /* Add the path to the icon */
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-image: url('assets/Sql.png');
+  background-size: cover;
+  width: 70px; /* Adjust the size of the icon */
+  height: 70px; /* Adjust the size of the icon */
+}
+.csharp-icon {
+    /* Ajoutez le chemin de l'icône */
+    margin-top: 10px;
+    margin-bottom: 4px;
+    background-image: url('assets/c-sharp.png');
+    background-size: contain;
+    width: 70px; /* Ajustez la taille de l'icône */
+    height: 70px; /* Ajustez la taille de l'icône */
+}
+
+
+.competence p {
+  font-size: 40px; /* Adjust the font size */
+  margin-top: 20px; /* Add some margin between icon and text */
+  font-weight: 700;
+}
+
+/* Conteneur principal */
+.BTS-container {
+  padding: 20px; 
+  padding-top: 100px; 
+  background-image: url('assets/galaxy-bts.jpg'); 
+  background-size: cover; /* Utiliser cover pour couvrir toute la zone */
+  background-position: center; /* Centrer l'image */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style pour la description */
+.description-container {
+  color: #ffffff;
+  text-align: center;
+}
+
+.description-container h1 {
+  font-size: 2.5rem; /* Taille de police légèrement réduite */
+}
+
+.description-container p {
+  font-size: 1.2rem; /* Taille de police légèrement réduite */
+}
+
+/* Style pour la liste de documents */
+.documents-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.documents-container h1 {
+  font-size: 1.8rem; /* Taille de police légèrement augmentée */
+  margin-bottom: 10px;
+}
+
+/* Style pour le sommaire */
+.documents-container ul {
+  list-style-type: none;
+  padding-left: 30px;
+  font-size: large;
+}
+
+.documents-container li {
+  margin-bottom: 10px;
+}
+
+.documents-container a {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none; /* Supprimer la soulignement des liens */
+  transition: color 0.3s; /* Animation de transition */
+}
+
+.documents-container a:hover {
+  color: #0056b3; /* Changement de couleur au survol */
+}
+
+/* Ajoute une icône devant chaque élément de la liste */
+.documents-container li::before {
+  content: "\2022"; /* Code unicode pour un point */
+  color: #007bff;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em; /* Pour aligner le point avec le texte */
+}
+/* Style pour les conteneurs de documents */
+.documents-assets-container {
+  margin-top: 20px;
+}
+
+/* Style pour le bouton de téléchargement */
+/* Style pour le bouton de téléchargement */
+.bts-download {
+  background-color: #007bff;
+  color: #ffffff;
+   /* Ajout d'une bordure */
+  border-radius: 5px;
+  padding: 12px 24px; /* Légère augmentation de la taille du padding */
+  font-size: 1.5rem;
+  font-weight: bold; /* Renforcer le poids de la police */
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s; /* Animation de transition */
+}
+
+.bts-download:hover {
+  background-color: #0056b3;
+  border-color: #0056b3; /* Changement de couleur de la bordure au survol */
+}
+
+.bouton-veille a {
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 12px 24px; /* Légère augmentation de la taille du padding */
+  font-size: 1.5rem;
+  font-weight: bold; /* Renforcer le poids de la police */
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s; /* Animation de transition */
+}
+
+.bouton-veille a:hover {
+  background-color: #0056b3;
+  border-color: #0056b3; /* Changement de couleur de la bordure au survol */
+}
+
+.page-projet {
+  
+  background-image: url('assets/projet-galaxy.jpg');
+  background-size: cover; /* Redimensionne l'image pour couvrir tout le conteneur */
+  background-position: center; /* Centre l'image de fond */
+  padding: 20px;
+
+}
+
+.page-projet h1 {
+  color: #ccc4df;
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 80px;
+  font-size: 70px;
+  animation: slideInFromLeft 1.5s ease-out;
+}
+.description-projet p{
+  color: #ccc4df;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 24px; /* Taille de police augmentée */
+  font-weight: bold; /* Mettre en gras pour mettre en évidence */
+  text-shadow: 10px 20px 20px rgba(0, 0, 0, 0.5); 
+  padding-bottom: 30px ;
+
+}
+
+.liste-projet {
+  margin: 60px;
+  padding: 20px;
+  
+}
+.projet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dbd6f7;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+/* style.css */
+
+/* Style général */
+.veille-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* Style des sections */
+.veille-title {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 120px;
+  font-size: 30px;
+  margin-bottom: 100px;
+  
+}
+
+/* Style des articles et informations */
+.article-veille-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.article-veille-container h3 {
+  margin-top: 0;
+}
+
+/* Style du footer */
+.footer-veille {
+  margin-top: 40px;
+}
